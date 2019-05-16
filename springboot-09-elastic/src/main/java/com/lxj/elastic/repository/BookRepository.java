@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Created by liuxinjian on 2018/6/17.
  */
-public interface BookRepository  extends ElasticsearchRepository<Book,Integer>{
+public interface BookRepository  extends ElasticsearchRepository<Book, Integer>{
 
 
     //参照https://docs.spring.io/spring-data/elasticsearch/docs/3.0.8.RELEASE/reference/html/
-    public List<Book> findByBookNameLike(String bookName);
+    List<Book> findByBookNameLike(String bookName);
 }

@@ -26,7 +26,7 @@
 
 	<dependencies>
 		<!--SpringBoot默认使用SpringData ElasticSearch模块进行操作-->
-		<dependency>-->
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>

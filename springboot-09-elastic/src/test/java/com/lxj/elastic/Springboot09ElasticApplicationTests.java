@@ -28,16 +28,19 @@ public class Springboot09ElasticApplicationTests {
 	BookRepository bookRepository;
 
 
+	@Test
+	public void testRepositoryIndex(){
+		Book book = new Book();
+		book.setId(1);
+		book.setAuthor("曹雪芹");
+		book.setBookName("《红楼梦》");
+		bookRepository.index(book);
+	}
 
 	@Test
-	public void test02(){
-//		Book book = new Book();
-//		book.setId(1);
-//		book.setAuthor("曹雪芹");
-//		book.setBookName("《红楼梦》");
-//		bookRepository.index(book);
-
+	public void testRepositorySearch(){
 		List<Book> byBookNameLike = bookRepository.findByBookNameLike("梦");
+		System.out.println("book list = ");
 		System.out.println(byBookNameLike);
 	}
 
@@ -81,6 +84,7 @@ public class Springboot09ElasticApplicationTests {
 		//执行
 		try {
 			SearchResult searchResult = jestClient.execute(search);
+			System.out.println("searchResult = ");
 			System.out.println(searchResult.getJsonString());
 		} catch (IOException e) {
 			e.printStackTrace();
